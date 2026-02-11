@@ -1,158 +1,61 @@
 import os
 
-BASE_DIR = "materials-catalog"
+BASE_DIR = "materials_catalog"
 
-# Helper functions
-def make_dir(path):
-    os.makedirs(path, exist_ok=True)
-
-def make_file(path):
-    open(path, "a").close()
-
-# -----------------------------
-# Create base project directory
-# -----------------------------
-make_dir(BASE_DIR)
-
-# -----------------------------
-# App directory structure
-# -----------------------------
-app_dirs = [
-    "app/models",
-    "app/schemas",
-    "app/api",
-    "app/core",
-    "app/utils"
+folders = [
+    "alembic/versions",
+    "app/routers",
+    "tests"
 ]
 
-for d in app_dirs:
-    make_dir(os.path.join(BASE_DIR, d))
+files = [
+    "README.md",
+    "TESTING.md",
+    "PROJECT_SUMMARY.md",
+    "INTEGRATION_GUIDE.md",
+    "FOLDER_STRUCTURE.md",
+    "requirements.txt",
+    ".gitignore",
+    "alembic.ini",
+    "quickstart.sh",
+    "seed_data.py",
 
-# -----------------------------
-# Alembic structure
-# -----------------------------
-make_dir(os.path.join(BASE_DIR, "alembic/versions"))
+    "alembic/env.py",
+    "alembic/script.py.mako",
 
-# -----------------------------
-# Tests directory
-# -----------------------------
-make_dir(os.path.join(BASE_DIR, "tests"))
-
-# -----------------------------
-# __init__.py files
-# -----------------------------
-init_files = [
     "app/__init__.py",
-    "app/models/__init__.py",
-    "app/schemas/__init__.py",
-    "app/api/__init__.py",
-    "app/core/__init__.py",
-    "app/utils/__init__.py",
-    "tests/__init__.py"
-]
-
-for f in init_files:
-    make_file(os.path.join(BASE_DIR, f))
-
-# -----------------------------
-# Model files
-# -----------------------------
-model_files = [
-    "app/models/user.py",
-    "app/models/product.py",
-    "app/models/supplier.py",
-    "app/models/offer.py",
-    "app/models/event.py"
-]
-
-for f in model_files:
-    make_file(os.path.join(BASE_DIR, f))
-
-# -----------------------------
-# Schema files
-# -----------------------------
-schema_files = [
-    "app/schemas/user.py",
-    "app/schemas/product.py",
-    "app/schemas/supplier.py",
-    "app/schemas/offer.py",
-    "app/schemas/event.py"
-]
-
-for f in schema_files:
-    make_file(os.path.join(BASE_DIR, f))
-
-# -----------------------------
-# API route files
-# -----------------------------
-api_files = [
-    "app/api/deps.py",
-    "app/api/auth.py",
-    "app/api/products.py",
-    "app/api/suppliers.py",
-    "app/api/offers.py",
-    "app/api/events.py",
-    "app/api/insights.py"
-]
-
-for f in api_files:
-    make_file(os.path.join(BASE_DIR, f))
-
-# -----------------------------
-# Core files
-# -----------------------------
-core_files = [
-    "app/core/security.py",
-    "app/core/conversions.py"
-]
-
-for f in core_files:
-    make_file(os.path.join(BASE_DIR, f))
-
-# -----------------------------
-# Utility files
-# -----------------------------
-make_file(os.path.join(BASE_DIR, "app/utils/seed.py"))
-
-# -----------------------------
-# Main app files
-# -----------------------------
-main_files = [
     "app/main.py",
-    "app/config.py",
-    "app/database.py"
-]
+    "app/database.py",
+    "app/models.py",
+    "app/schemas.py",
+    "app/auth.py",
 
-for f in main_files:
-    make_file(os.path.join(BASE_DIR, f))
+    "app/routers/__init__.py",
+    "app/routers/auth.py",
+    "app/routers/products.py",
+    "app/routers/suppliers.py",
+    "app/routers/offers.py",
+    "app/routers/analytics.py",
 
-# -----------------------------
-# Test files
-# -----------------------------
-test_files = [
+    "tests/__init__.py",
     "tests/conftest.py",
     "tests/test_auth.py",
     "tests/test_products.py",
-    "tests/test_conversions.py",
-    "tests/test_insights.py"
+    "tests/test_conversion.py",
+    "tests/test_analytics.py",
 ]
 
-for f in test_files:
-    make_file(os.path.join(BASE_DIR, f))
+# Create base directory
+os.makedirs(BASE_DIR, exist_ok=True)
 
-# -----------------------------
-# Root-level files
-# -----------------------------
-root_files = [
-    "requirements.txt",
-    ".env.example",
-    ".gitignore",
-    "README.md",
-    "alembic.ini"
-]
+# Create folders
+for folder in folders:
+    os.makedirs(os.path.join(BASE_DIR, folder), exist_ok=True)
 
-for f in root_files:
-    make_file(os.path.join(BASE_DIR, f))
+# Create files
+for file in files:
+    file_path = os.path.join(BASE_DIR, file)
+    with open(file_path, "a"):
+        pass
 
-print("Folder structure created successfully!")
-print(f"Project directory: {BASE_DIR}")
+print("✅ materials_catalog folder structure created successfully!")
