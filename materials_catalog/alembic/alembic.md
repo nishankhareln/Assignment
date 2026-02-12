@@ -50,7 +50,7 @@ alembic/
 
 ---
 
-## 📄 **1. alembic/versions/ - The Migration Files**
+##  **1. alembic/versions/ - The Migration Files**
 
 **What it is:** 
 This folder contains **every single database change ever made** to the project, in chronological order.
@@ -95,7 +95,7 @@ This allows you to move **forward** and **backward** through database versions.
 
 ---
 
-## 📄 **2. alembic/env.py - The Configuration File**
+##  **2. alembic/env.py - The Configuration File**
 
 **What it is:**
 This is the **brain** of Alembic. It tells Alembic:
@@ -133,7 +133,7 @@ def run_migrations_offline():
 
 ---
 
-## 📄 **3. alembic/script.py.mako - The Template File**
+##  **3. alembic/script.py.mako - The Template File**
 
 **What it is:**
 A **template** that Alembic uses when you create a new migration. Instead of writing every migration from scratch, Alembic uses this template to generate the basic structure.
@@ -171,7 +171,7 @@ alembic revision --autogenerate -m "your message here"
 
 ---
 
-## 📄 **4. alembic/README - Documentation File**
+##  **4. alembic/README - Documentation File**
 
 **What it is:**
 A simple text file with basic Alembic instructions. Usually contains:
@@ -198,7 +198,7 @@ To downgrade to a specific version:
 
 ---
 
-## 📄 **5. alembic.ini (in root folder, not inside alembic/)**
+##  **5. alembic.ini (in root folder, not inside alembic/)**
 
 **What it is:**
 The **master configuration file** located in your project root. This connects your project to Alembic.
@@ -223,7 +223,7 @@ hooks = black
 
 ---
 
-## 🎮 **ALEMBIC COMMANDS - WHAT THEY DO**
+##  **ALEMBIC COMMANDS - WHAT THEY DO**
 
 ### **Command 1: Initialize Alembic**
 ```bash
@@ -280,7 +280,7 @@ alembic history
 
 ---
 
-## 🔄 **REAL-WORLD EXAMPLE: ADDING A NEW COLUMN**
+##  **REAL-WORLD EXAMPLE: ADDING A NEW COLUMN**
 
 Let's say you want to add a "stock_quantity" column to your products table:
 
@@ -329,7 +329,7 @@ alembic downgrade -1
 
 ---
 
-## 🚨 **WHY YOU NEED ALEMBIC FOR THIS PROJECT**
+##  **WHY YOU NEED ALEMBIC FOR THIS PROJECT**
 
 ### **Scenario 1: Team Development**
 - **You** add supplier tags feature (requires new tags table)
@@ -355,7 +355,7 @@ alembic downgrade -1
 
 ---
 
-## 💾 **THE ALEMBIC_TRACKING TABLE**
+##  **THE ALEMBIC_TRACKING TABLE**
 
 Alembic creates a special table in your database called:
 
@@ -373,7 +373,7 @@ This single-row table tracks which migration is currently applied. When you run 
 
 ---
 
-## 📋 **ALEMBIC VS GIT - ANALOGY**
+##  **ALEMBIC VS GIT - ANALOGY**
 
 | Git (Code) | Alembic (Database) |
 |------------|-------------------|
@@ -391,7 +391,7 @@ This single-row table tracks which migration is currently applied. When you run 
 
 ---
 
-## 🎯 **ALEMBIC IN YOUR PROJECT - SPECIFIC USE**
+## **ALEMBIC IN YOUR PROJECT - SPECIFIC USE**
 
 For your Materials Catalog API, Alembic tracks changes to:
 
@@ -432,21 +432,21 @@ Creates all tables:
 
 ---
 
-## ✅ **SUMMARY - WHAT ALEMBIC DOES FOR YOU**
+##  **SUMMARY - WHAT ALEMBIC DOES FOR YOU**
 
 | Without Alembic | With Alembic |
 |-----------------|--------------|
-| 😰 Manual SQL scripts | ✅ Automated migrations |
-| 😰 Different team members have different DBs | ✅ Everyone has identical DB |
-| 😰 Fear of production changes | ✅ Safe, reversible upgrades |
-| 😰 No history of changes | ✅ Complete version history |
-| 😰 Hard to review DB changes | ✅ Migration files are code reviewable |
-| 😰 Risk of data loss | ✅ Rollback capability |
-| 😰 "Works on my machine" | ✅ Works everywhere |
+| Manual SQL scripts |  Automated migrations |
+| Different team members have different DBs |  Everyone has identical DB |
+| Fear of production changes |  Safe, reversible upgrades |
+| No history of changes |  Complete version history |
+| Hard to review DB changes |  Migration files are code reviewable |
+| Risk of data loss |  Rollback capability |
+| "Works on my machine" |  Works everywhere |
 
 ---
 
-## 🚀 **ALEMBIC COMMANDS CHEAT SHEET**
+##  **ALEMBIC COMMANDS CHEAT SHEET**
 
 ```bash
 # First time setup
@@ -474,7 +474,7 @@ alembic show <revision_id>           # Show specific migration
 
 ---
 
-## 🏁 **FINAL THOUGHT**
+##  **FINAL THOUGHT**
 
 **Alembic is your database's time machine and backup system in one.** 
 
